@@ -1,0 +1,14 @@
+.container{
+position: absolute;
+top: 150px;
+background-color: white;
+padding: 30px;
+border-radius: 20px;
+box-shadow: 0px 0px 10px 0px black;
+}
+/* Aqui se ingresa la imagen  */
+.bg{background: url("https://cdn5.f-cdn.com/contestentries/1108779/15284413/5994f46743e9d_thumb900.jpg") ;
+width: 100%;
+height:100cm ;
+background-size: 100%;
+}
