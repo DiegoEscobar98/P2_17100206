@@ -1,0 +1,245 @@
+= Documento AsciiDoc Resumen Unidad 1
+Diego Escobar <Diegoaeh98@gmail.com>
+Version 1.0 03-10-2020
+
+
+=== Descripcion del modelo de caja
+|===
+| Elemento | Descripcion 
+| Content | Se refiere al contenido del lenguaje html (Parrafos,Imagenes,elementos de listas o tablas, etc.)
+| Padding | Es el espacio que existe entre el contenido y su borde.
+| Border | Espacio/ linea que encierra por completo al padding y al contenido
+| Margin | Es la distancia que existe entre la caja y sus hermanas o adyacentes
+| Outline | Se trata de un borde que no afecta a las dimensiones de la caja
+|===
+
+=== Explicacion de la propiedad Display
+|===
+| Propiedad | Descripcion 
+| Bock | Crea cajas de tipo bloque por lo que ocupa todo el espacio disponible en la linea aunque su contenido no ocupe todo.
+| Inline | Su caja se convierte en un elemento en linea y solo ocupa el espacio necesario para su contenido.
+| Inline-Box | El elemento genera una caja block pero con comportamiento de una inline
+| None | remueve el elemento por lo que su espacio se ocupa por otros elementos
+|===
+=== Box-sizing
+* Content-Box : Se refiere al ancho y a la altura del elemento incluidos del contenido(Borde, relleno y margen no son parte del ancho o la altura)
+* Border-Box : Aqui se refiere al borde y al padding
+
+=== Concepto Flujo de documento
+
+=== Tipos de posicionamiento
+
+* Static : Es el valor por defecto. No está posicionado en ninguna forma en específico.
+
+* Relative : La caja se desplaza respecto del lugar que ocupa de forma natural en el flujo de cajas del documento web sin afectar a otras cajas.
+
+* Absolute : Permite que el elemento se desplace respecto al primer elemento contenedor posicionado o respecto a la esquina superior izquierda de la ventana de visualización.
+
+* Fixed :el elemento se mantendrá en la ventana de visualización aunque el usuario se desplace por la pagina. Del mismo modo que en el posicionamiento absoluto obliga al resto de cajas a desplazarse para ocupar la posición que queda vacía.
+
+* Sticky : es un híbrido del posicionamiento estático y fixed.
+Cuando se hace scroll inicialmente parece que tenga un posicionamiento static, Al llegar al lugar natural que ocuparía la caja el posicionamiento pasa a transformarse en fixed.
+
+=== Unidades de medida en css
+* Absolutas : Son aquellas que especifican una medida en términos absolutos, sin tener en cuenta el contexto donde se están aplicando.
+* Relativas : Son aquellas que tienen en cuenta el contexto donde se encuentran. Son relativas a las dimensiones del contenedor donde se han definido. 
+
+=== Descripcion de todas las unidades relativas
+* px : Se refiere a los pixeles de la pantalla
+* % : Se refiere al porcentaje del tamaño del contenido
+Estas se refieren al tipo de fuente
+
+* em : Se refiere al tamaño de la fuente
+* rem : Se refiere al tamaño de la fuente raiz
+* ex : Es aproximadamente la mitad del tamaño de la fuente
+* ch : Es el ancho del caracter cero
+
+=== Selectores Basicos
+
+|===
+|Tag |Id |Clase
+
+| Selecciona todos los elementos de la página cuya etiqueta HTML coincide con el valor del selector
+| selecciona un elemento de la página a través del valor de su atributo id
+| Todos los elementos que tengan asignada la clase
+|===
+=== Selectores de relacion
+|===
+| tipo | nombre | ejemplo | lectura
+| > 
+| Descendiente Directo
+| div > h3 
+| todos los elemtos h3 que sean hijos directos de div
+
+| Espacio
+| Descendiente
+| div :only-child
+| Hijos unicos que esten dentro del div
+
+| + 
+| Hermano Adyacente
+| p + .Box
+| Elementos clases box que sean hermanos y este directamente despues de p
+
+| ~
+| Hermano General
+| h2 ~ p 
+| seleccionar los parrafos hermanos de h2 pero no necesariamente junto
+|===
+
+=== PseudoSelectores
+* PseudoClase : Se refieren a los estados que puede tener un elemento.
+* PseudoElemento : Seleccionan solamente ciertas partes de un elemento.
+
+ Ejemplos de PseudoClase
+
+[source,css]
+----
+h1 :first-child
+{
+    background-color: Blue
+}
+----
+
+[source,css]
+----
+h1 :last-child
+{
+    background-color: yellow
+}
+----
+
+[source,css]
+----
+p :Hover
+{
+    color: Red
+}
+----
+
+[source,css]
+----
+p :last-of-type
+{
+    color: blue
+}
+----
+Ejemplos de Pseudo Elementos
+[source,css]
+----
+p::first-line
+{
+  text-transform: uppercase;
+}
+----
+[source,css]
+----
+p ::first-letter
+{
+    color: blue
+}
+----
+[source,css]
+----
+p::before {
+  content: "Aviso: ";
+  text-decoration: underline;
+}
+----
+[source,css]
+----
+p ::first-line
+{
+    color: red
+}
+----
+
+=== Cascada
+
+La cascada es el mecanismo que controla el resultado final de como visualizaremos una etiqueta html cuando a esta se le apliquen distintas instrucciones CSS.
+
+Consta de 3 niveles:
+
+* Importancia - donde esta ubicado
+* Especificidad - el que tan especifico es
+* Orden en la que fue declarada
+
+1.- Importancia
+
+|=== 
+
+| Ubicacion en la cascada | Ejemplo
+| 1.Archivos Externos 
+| Estilo.css
+
+| 2.Declaracion Interna 
+| <head><Style>-------</Style></head>
+
+| 3.Declaracion en linea 
+| <p class="par1" style="color:green">Este es un parrafo</p> 
+
+|===
+
+2.-Peso
+
+|===
+
+| Jerarquia | Selector | Especificidad
+| 4 
+| etiqueta html 
+| 1,000 pts
+
+| 3
+| ID 
+| 100 pts
+
+| 2 
+| Clase,Pseudo clase, atributo
+| 10 pts
+
+| 1 
+| Elemento o Pseudo elemento 
+| 1 pts
+
+| 0 
+| Universal 
+| 0 pts
+
+
+|===
+* Nota: si hay 2 o mas selectores se aplican a un mismo elemento, ganará el que tenga mas especificidad.
+  Tambien si dos o mas selectores tienen la misma especificidad, ganará el último que se haya declarado.
+
+
+3.- Orden en la que se declararon: como su nombre lo dice, esta es ultimo nivel en caso de empate con los pesos de los selectores, se tomara desde el ultimo declarado hasta el primero, tomando asi los ultimos como los resultados de visualizacion.
+
+=== Especificidad 
+
+La especificidad es el peso que se le agrega al selector, dependiendo lo preciso que este sea como podemos ver en la tabla
+
+|===
+
+| Jerarquia | Selector | Especificidad
+| 4 
+| etiqueta html 
+| 1,000 pts
+
+| 3
+| ID 
+| 100 pts
+
+| 2 
+| Clase,Pseudo clase, atributo
+| 10 pts
+
+| 1 
+| Elemento o Pseudo elemento 
+| 1 pts
+
+| 0 
+| Universal 
+| 0 pts
+
+|===
+
+Cabe destacar que no se coloco el !Important ya que es considerado mala practica debido a la caracteristica de ignorar todo y realizar lo que tiene el, para calcular la especificidad se tiene que sumar los elementos que contiene el selector y dependiendo la precision del selector sera el peso acumulado el que se le determinara
