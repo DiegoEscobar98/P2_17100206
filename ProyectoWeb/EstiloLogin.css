@@ -27,7 +27,7 @@ body{
      opacity: .95 ;
      box-shadow: 0px 0px 30px #848484;
 }
-
+/*fuente del texto del input y sus propiedades*/
 .form-group input{
      height: 40px;
      font-size: 20px;
