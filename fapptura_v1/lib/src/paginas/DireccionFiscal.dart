@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-
-
-
-
-
 class PaginaFiscal extends StatefulWidget {
   @override
   _PaginaFiscalState createState() => _PaginaFiscalState();
