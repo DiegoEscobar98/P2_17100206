@@ -3,6 +3,13 @@ import 'package:fapptura_v1/src/paginas/DireccionFiscal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
+import '../../NuevaFactura.dart';
+import 'Inf_Empresa.dart';
+import 'NuevaSucursal.dart';
+import 'NuevoCliente.dart';
+import 'NuevoProducto.dart';
+import 'ayuda.dart';
+
 class MenuPrincipal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -28,21 +35,26 @@ class MenuPrincipal extends StatelessWidget {
             SpeedDialChild(
               child: Icon(Icons.person_add),
               backgroundColor: Colors.green,
-              label: "Nuevo Cliente"
+              label: "Nuevo Cliente",
+              onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> NuevoCliente()));}
             ),
              SpeedDialChild(
               child: Icon(Icons.book),
               backgroundColor: Colors.purple,
-              label: "Nueva Factura"
+              label: "Nueva Factura",
+              onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> NuevaFactura()));}
             ), SpeedDialChild(
               child: Icon(Icons.card_giftcard),
               backgroundColor: Colors.red,
-              label: "Nuevo Producto"
+              label: "Nuevo Producto",
+              onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> NuevoProducto()));}
+              
             ),
              SpeedDialChild(
               child: Icon(Icons.store),
               backgroundColor: Colors.lightBlue,
-              label: "Nueva sucursal"
+              label: "Nueva sucursal",
+              onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> NuevaSucursal()));}
             )
           ],
         ),
@@ -63,23 +75,15 @@ class MenuPrincipal extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.edit),
-              title: Text("Editar Perfil"),
-              onTap:(){ Navigator.push(context, MaterialPageRoute(builder: (context)=> PaginaFiscal()));}
-            ),
-            ListTile(
               leading: Icon(Icons.home),
               title: Text("Informacion de la empresa"),
+              onTap:(){Navigator.push(context, MaterialPageRoute(builder: (context)=> InfoEmpresa()));}
             ),
             ListTile(
               leading: Icon(Icons.directions),
               title: Text("Direccion fiscal"),
+              onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=> PaginaFiscal()));},
             ),
-            ListTile(
-              leading: Icon(Icons.help_outline),
-              title: Text("Ayuda"),
-            ),
-            
             ],
           ),
         ),
