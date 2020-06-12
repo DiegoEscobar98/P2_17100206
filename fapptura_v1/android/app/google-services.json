@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "187319446312",
+    "firebase_url": "https://fir-crud-ce52c.firebaseio.com",
+    "project_id": "fir-crud-ce52c",
+    "storage_bucket": "fir-crud-ce52c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187319446312:android:d597451619526dca5c3e1d",
+        "android_client_info": {
+          "package_name": "com.example.fapptura_v1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187319446312-fc7g9msesbti0edunrdohogukunligg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiH6UxKVPbhnpEmX2pUuMo7a28qnNt5E4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187319446312-fc7g9msesbti0edunrdohogukunligg0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

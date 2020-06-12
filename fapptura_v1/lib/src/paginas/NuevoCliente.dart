@@ -89,7 +89,7 @@ List<String> _locations = ['Adquisicion de mercancias', 'Devoluciones, descuento
                 padding: new EdgeInsets.all(16.0),
               ),
                DropdownButton(
-            hint: Text('Please choose a location'), // Not necessary for Option 1
+            hint: Text('Seleccione el uso del CFDI'), // Not necessary for Option 1
             value: _selectedLocation,
             onChanged: (newValue) {
               setState(() {
@@ -102,7 +102,7 @@ List<String> _locations = ['Adquisicion de mercancias', 'Devoluciones, descuento
                 value: location,
               );
             }).toList(),),
-                OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.check), label: Text("Guardar"),shape: StadiumBorder(),highlightColor: Colors.green[500])
+                OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.check), label: Text("Agregar"),shape: StadiumBorder(),highlightColor: Colors.green[500])
           ],
         ),
         ),

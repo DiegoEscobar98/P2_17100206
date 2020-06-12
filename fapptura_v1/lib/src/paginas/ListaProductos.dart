@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'dart:async';
+import 'NuevoProducto.dart';
 
 
-
-class ListadoFacturas extends StatefulWidget {
+class ListaProductos extends StatefulWidget {
   @override
-  _ListadoFacturasState createState() => _ListadoFacturasState();
+  _ListaProductosState createState() => _ListaProductosState();
 }
 
-class _ListadoFacturasState extends State<ListadoFacturas> {
+class _ListaProductosState extends State<ListaProductos> {
   @override
   Widget build(BuildContext context) {
-   return Scaffold(appBar: AppBar(
-        title: Text("Listado Facturas"),
+    return Scaffold(appBar: AppBar(
+        title: Text("Listado Productos"),
         centerTitle: true,
         ),
       body: Padding(padding: const EdgeInsets.all(20.0),

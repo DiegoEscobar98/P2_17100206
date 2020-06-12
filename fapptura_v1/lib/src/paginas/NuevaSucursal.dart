@@ -81,7 +81,7 @@ class _NuevaSucursalState extends State<NuevaSucursal> {
                 ),
                       hintText:"Pais" ,labelText: "Pais",),
               ),
-                OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.check), label: Text("Guardar"),shape: StadiumBorder(),highlightColor: Colors.green[500])
+                OutlineButton.icon(onPressed: (){}, icon: Icon(Icons.check), label: Text("Agregar"),shape: StadiumBorder(),highlightColor: Colors.green[500])
           ],
         ),
         ),

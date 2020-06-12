@@ -1,13 +1,17 @@
 
 import 'package:fapptura_v1/src/paginas/DireccionFiscal.dart';
+import 'package:fapptura_v1/src/paginas/ListadoClientes.dart';
+import 'package:fapptura_v1/src/paginas/ListadoFacturas.dart';
+import 'package:fapptura_v1/src/paginas/ListadoSucursales.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'Inf_Empresa.dart';
+import 'ListaProductos.dart';
 import 'NuevaFactura.dart';
 import 'NuevaSucursal.dart';
 import 'NuevoCliente.dart';
 import 'NuevoProducto.dart';
-import 'ayuda.dart';
+
 
 class MenuPrincipal extends StatelessWidget {
   @override
@@ -106,7 +110,7 @@ class MenuPrincipal extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       IconButton(icon: Icon(Icons.account_box),color: Colors.cyan, tooltip:"Listado de clientes" ,onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> PaginaFiscal()));
+                       Navigator.push(context, MaterialPageRoute(builder: (context)=> ClientesList()));
                       },iconSize: 80,),
                         SizedBox(height: 10,),
                           Text("Clientes")
@@ -123,10 +127,11 @@ class MenuPrincipal extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       IconButton(icon: Icon(Icons.card_giftcard),color: Colors.cyan, tooltip:"Lista de Productos" ,onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> PaginaFiscal()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ListaProductos()));
                       },iconSize: 80,),
                         SizedBox(height: 10,),
-                          Text("Productos")
+                          Text("Productos"),
+                          
                     ],
                   ),
                 ),
@@ -140,7 +145,7 @@ class MenuPrincipal extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       IconButton(icon: Icon(Icons.book),color: Colors.cyan, tooltip:"Lista de Facturas" ,onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> PaginaFiscal()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ListadoFacturas()));
                       },iconSize: 80,),
                         SizedBox(height: 10,),
                           Text("Facturas")
@@ -157,7 +162,7 @@ class MenuPrincipal extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       IconButton(icon: Icon(Icons.store),color: Colors.cyan, tooltip:"Lista de sucursales" ,onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> PaginaFiscal()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ListadoSucursales()));
                       },iconSize: 80,),
                         SizedBox(height: 10,),
                           Text("Sucursales")
